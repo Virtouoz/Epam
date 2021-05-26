@@ -68,10 +68,30 @@ public class OneDimensionalArrays {
         }
     }
 
-    public static int task6(int[] array) {
-        int result = 0;
+    // Задана последовательность N вещественных чисел.
+    // Вычислить сумму чисел, порядковые номера которых являются простыми числами.
+    public static void task6(double[] array) {
+        double result = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (checkPrimeNumber(i)) {
+                result += array[i];
+                System.out.println(i + " " + array[i]);
+            }
+        }
+        System.out.println(result);
+    }
 
-        return result;
+    private static boolean checkPrimeNumber(int number) {
+        int temp;
+        boolean isPrime = true;
+        for (int i = 2; i <= number / 2; i++) {
+            temp = number % i;
+            if (temp == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        return isPrime;
     }
 
     public static int task7(int[] array) {

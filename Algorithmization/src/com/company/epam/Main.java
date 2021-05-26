@@ -15,14 +15,15 @@ public class Main {
             dArray[i] = i * Math.pow(-1, i);
         }
 
-        task1(array, 3);
-        task2(dArray, 5);
-        task3(dArray);
-        task4(dArray);
-        task5(array);
+        //task1(array, 3);
+        //task2(dArray, 5);
+        //task3(dArray);
+        //task4(dArray);
+        //task5(array);
+        task6(dArray);
 
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+           //System.out.println(array[i]);
         }
 
     }
