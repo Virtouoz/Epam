@@ -2,9 +2,12 @@
 /Без названия (1).png
 /Без названия.png
 /JavaFundamentals/.idea/
-/JavaFundamentals/.out/
+/JavaFundamentals/out/*
 /JavaFundamentals/JavaFundamentals.iml
 /BasicsOfSoftwareCodeDevelopment/.idea/
-/BasicsOfSoftwareCodeDevelopment/.out/
+/BasicsOfSoftwareCodeDevelopment/out/
 /BasicsOfSoftwareCodeDevelopment/untitled104.iml
 /BasicsOfSoftwareCodeDevelopment/.gitignore
+/.books/
+/Algorithmization/.idea/
+/Algorithmization/Algorithmization.iml
