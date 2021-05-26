@@ -11,17 +11,18 @@ public class Main {
         double[] dArray = new double[10];
 
         for (int i = 0; i < array.length; i++) {
-            array[i] = i;
+            array[i] = (int) (i * 2 * Math.pow(-1, i));
             dArray[i] = i * Math.pow(-1, i);
         }
 
-        System.out.println(task1(array, 3));
-        System.out.println(task2(dArray, 5));
+        task1(array, 3);
+        task2(dArray, 5);
         task3(dArray);
         task4(dArray);
+        task5(array);
 
         for (int i = 0; i < array.length; i++) {
-            System.out.println(dArray[i]);
+            System.out.println(array[i]);
         }
 
     }

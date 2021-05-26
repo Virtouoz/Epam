@@ -4,20 +4,20 @@ public class OneDimensionalArrays {
 
     // В массив A [N] занесены натуральные числа.
     // Найти сумму тех элементов, которые кратны данному К.
-    public static int task1(int[] array, int K) {
+    public static void task1(int[] array, int K) {
         int result = 0;
         for (int element : array) {
             if (element % K == 0) {
                 result += element;
             }
         }
-        return result;
+        System.out.println(result);
     }
 
     //  Дана последовательность действительных чисел а1 ,а2 ,..., ап.
     //  Заменить все ее члены, большие данного Z, этим числом.
     //  Подсчитать количество замен.
-    public static int task2(double[] array, double Z) {
+    public static void task2(double[] array, double Z) {
         int numberOfSubstitutions = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] >= Z) {
@@ -25,7 +25,7 @@ public class OneDimensionalArrays {
                 numberOfSubstitutions++;
             }
         }
-        return numberOfSubstitutions;
+        System.out.println(numberOfSubstitutions);
     }
 
     // Дан массив действительных чисел, размерность которого N.
@@ -58,10 +58,14 @@ public class OneDimensionalArrays {
         array[array.length - 1] = element;
     }
 
-    public static int task5(int[] array) {
-        int result = 0;
-
-        return result;
+    // Даны целые числа а1 ,а2 ,..., аn .
+    // Вывести на печать только те числа, для которых аi > i.
+    public static void task5(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > i) {
+                System.out.println(array[i]);
+            }
+        }
     }
 
     public static int task6(int[] array) {
