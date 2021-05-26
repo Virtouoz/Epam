@@ -1,5 +1,7 @@
 package com.company.epam.oneDimensionalArrays;
 
+import java.util.HashMap;
+
 public class OneDimensionalArrays {
 
     // В массив A [N] занесены натуральные числа.
@@ -120,8 +122,8 @@ public class OneDimensionalArrays {
             }
         }
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == min) {
+        for (double v : array) {
+            if (v == min) {
                 newSize--;
             }
         }
@@ -138,10 +140,37 @@ public class OneDimensionalArrays {
         }
     }
 
-    public static int task9(int[] array) {
-        int result = 0;
-
-        return result;
+    // В массиве целых чисел с количеством элементов n
+    // найти наиболее часто встречающееся число. Если таких
+    // чисел несколько, то определить наименьшее из них.
+    public static void task9(int[] array) {
+        final int EXC = 0;                                  // Число которое будет заменять исключенные элементы
+        int resultElement = 0;
+        int counterElement = 0;
+        int[] exceptionNumbers = new int[array.length];     // Массив исключений
+        int counterOfSameNumbers = 0;                       // Счетчик одинаковых чисел
+        int counter = 0;                                    // Счетчик массива исключений
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i; j < array.length; j++) {
+                if (array[i] == array[j] && array[j] != EXC) { // Если числа одинаковы и число не исключено
+                    counterOfSameNumbers++;                 // Прибавляем счетчик одинаковых чисел
+                    exceptionNumbers[counter] = array[j];   // Добавляем потенциально исключаемое число в массив исключений
+                }
+            }
+            if (counterOfSameNumbers > 1) {                  // Если найдено больше одного совпадения
+                if (counterElement < counterOfSameNumbers || counterElement == counterOfSameNumbers && resultElement > array[i]) {
+                    counterElement = counterOfSameNumbers;
+                    resultElement = array[i];
+                }
+                // Выводим данные на экран
+                for (int j = 0; j < array.length; j++) {    // Исключаем данное число из поиска
+                    if (array[j] == exceptionNumbers[counter]) array[j] = EXC;
+                }
+            }
+            counterOfSameNumbers = 0;
+            counter++;
+        }
+        System.out.println(resultElement + "   " + counterElement);
     }
 
     public static int task10(int[] array) {
