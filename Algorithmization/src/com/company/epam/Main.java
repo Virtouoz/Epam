@@ -1,7 +1,6 @@
 package com.company.epam;
 
-import static com.company.epam.oneDimensionalArrays.OneDimensionalArrays.task1;
-import static com.company.epam.oneDimensionalArrays.OneDimensionalArrays.task2;
+import static com.company.epam.oneDimensionalArrays.OneDimensionalArrays.*;
 
 public class Main {
 
@@ -18,6 +17,7 @@ public class Main {
 
         System.out.println(task1(array, 3));
         System.out.println(task2(dArray, 5));
+        task3(dArray);
 
         for (int i = 0; i < array.length; i++) {
             System.out.println(dArray[i]);

@@ -28,10 +28,26 @@ public class OneDimensionalArrays {
         return numberOfSubstitutions;
     }
 
-    public static int task3(int[] array) {
-        int result = 0;
+    // Дан массив действительных чисел, размерность которого N.
+    // Подсчитать, сколько в нем отрицательных, положительных и нулевых элементов.
+    public static void task3(double[] array) {
+        int numberOfPositive = 0;
+        int numberOfNegative = 0;
+        int numberOfZero = 0;
 
-        return result;
+        for (double element : array) {
+            if (element > 0) {
+                numberOfPositive++;
+            } else if (element == 0) {
+                numberOfZero++;
+            } else {
+                numberOfNegative++;
+            }
+        }
+
+        System.out.println("Number of positive = " + numberOfPositive);
+        System.out.println("Number of zero = " + numberOfZero);
+        System.out.println("Number of negative = " + numberOfNegative);
     }
 
     public static int task4(int[] array) {
