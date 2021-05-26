@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
 
-        int[] array = new int[10];
-        double[] dArray = new double[10];
+        int[] array = new int[20];
+        double[] dArray = new double[20];
 
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (i * 2 * Math.pow(-1, i));
@@ -20,10 +20,11 @@ public class Main {
         //task3(dArray);
         //task4(dArray);
         //task5(array);
-        task6(dArray);
+        //task6(dArray);
+        task7(dArray);
 
         for (int i = 0; i < array.length; i++) {
-           //System.out.println(array[i]);
+           System.out.println(dArray[i]);
         }
 
     }

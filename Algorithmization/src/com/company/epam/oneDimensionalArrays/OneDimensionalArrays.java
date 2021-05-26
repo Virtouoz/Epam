@@ -94,10 +94,17 @@ public class OneDimensionalArrays {
         return isPrime;
     }
 
-    public static int task7(int[] array) {
-        int result = 0;
+    // Даны действительные числа
+    // Найти max(a1 + a2n, a2 + a2n−1,..,an + an+1)
+    public static void task7(double[] array) {
+        double result = 0;
+        for (int i = 0; i < array.length / 2 - 1; i++) {
+            if (result < Math.max(array[i], array[array.length - i - 1])) {
+                result = Math.max(array[i], array[array.length - i - 1]);
+            }
+        }
 
-        return result;
+        System.out.println(result);
     }
 
     public static int task8(int[] array) {
