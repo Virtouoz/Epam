@@ -14,7 +14,7 @@ public class Main {
 
         for (int i = 0; i < array.length; i++) {
             //array[i] = (int) (i * 2 * Math.pow(-1, i));
-            //dArray[i] = i * Math.pow(-1, i);
+            dArray[i] = i * Math.pow(-1, i);
             //dArray[i] = 5;
         }
 
@@ -26,8 +26,8 @@ public class Main {
         //task6(dArray);
         //task7(dArray);
         //task8(dArray);
-        task9(array);
-        //task10(dArray);
+        //task9(array);
+        task10(array);
 
         for (int i = 0; i < array.length; i++) {
             //System.out.println(array[i]);

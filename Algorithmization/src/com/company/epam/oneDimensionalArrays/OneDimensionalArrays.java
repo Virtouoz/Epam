@@ -1,7 +1,5 @@
 package com.company.epam.oneDimensionalArrays;
 
-import java.util.HashMap;
-
 public class OneDimensionalArrays {
 
     // В массив A [N] занесены натуральные числа.
@@ -173,10 +171,20 @@ public class OneDimensionalArrays {
         System.out.println(resultElement + "   " + counterElement);
     }
 
-    public static int task10(int[] array) {
-        int result = 0;
-
-        return result;
+    // Дан целочисленный массив с количеством элементов n.
+    // Сжать массив, выбросив из него каждый второй
+    // элемент (освободившиеся элементы заполнить нулями).
+    // Примечание. Дополнительный массив не использовать.
+    public static void task10(int[] array) {
+        for (int i = 0; i < array.length; i += 2) {
+            array[i / 2] = array[i];
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (array.length / 2 <= i) {
+                array[i] = 0;
+            }
+            System.out.println("i = " + i + " element = " + array[i]);
+        }
     }
 
 }
