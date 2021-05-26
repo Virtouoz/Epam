@@ -71,7 +71,7 @@ public class OneDimensionalArrays {
     // Задана последовательность N вещественных чисел.
     // Вычислить сумму чисел, порядковые номера которых являются простыми числами.
     public static void task6(double[] array) {
-        double result = 0;
+        double result = array[0];
         for (int i = 0; i < array.length; i++) {
             if (checkPrimeNumber(i)) {
                 result += array[i];
@@ -97,20 +97,45 @@ public class OneDimensionalArrays {
     // Даны действительные числа
     // Найти max(a1 + a2n, a2 + a2n−1,..,an + an+1)
     public static void task7(double[] array) {
-        double result = 0;
+        double result = array[0];
         for (int i = 0; i < array.length / 2 - 1; i++) {
             if (result < Math.max(array[i], array[array.length - i - 1])) {
                 result = Math.max(array[i], array[array.length - i - 1]);
             }
         }
-
         System.out.println(result);
     }
 
-    public static int task8(int[] array) {
-        int result = 0;
+    // Дана последовательность действительных чисел.
+    // Образовать новую последовательность, выбросив из
+    // исходной те члены, которые равны min(a1, a2,..,an).
+    public static void task8(double[] array) {
+        double[] result;
+        double min = array[0];
+        int newSize = array.length;
 
-        return result;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (min > Math.min(array[i], array[i + 1])) {
+                min = Math.min(array[i], array[i + 1]);
+            }
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == min) {
+                newSize--;
+            }
+        }
+
+        result = new double[newSize];
+
+        for (int j = 0, i = 0; i < array.length && j < result.length; i++) {
+            if (array[i] != min) {
+                result[j] = array[i];
+                System.out.println(result[j]);
+                j++;
+
+            }
+        }
     }
 
     public static int task9(int[] array) {
