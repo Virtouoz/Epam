@@ -18,6 +18,7 @@ public class Main {
         System.out.println(task1(array, 3));
         System.out.println(task2(dArray, 5));
         task3(dArray);
+        task4(dArray);
 
         for (int i = 0; i < array.length; i++) {
             System.out.println(dArray[i]);

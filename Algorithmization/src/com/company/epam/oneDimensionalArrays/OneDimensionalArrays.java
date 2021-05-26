@@ -50,10 +50,12 @@ public class OneDimensionalArrays {
         System.out.println("Number of negative = " + numberOfNegative);
     }
 
-    public static int task4(int[] array) {
-        int result = 0;
-
-        return result;
+    // Даны действительные числа а1 ,а2 ,..., аn .
+    // Поменять местами наибольший и наименьший элементы
+    public static void task4(double[] array) {
+        double element = array[0];
+        array[0] = array[array.length - 1];
+        array[array.length - 1] = element;
     }
 
     public static int task5(int[] array) {
