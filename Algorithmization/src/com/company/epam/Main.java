@@ -27,13 +27,12 @@ public class Main {
         // System.out.println(task7Matr(matrdouble));
         for (int i = 0; i < matr.length; i++) {
             for (int j = 0; j < matr[i].length; j++) {
-                matr[i][j] = i*(-1)+j;
+                matr[i][j] = i * (-1) + j;
             }
         }
 
         print(matr);
-        task8Matr(matr, 1, 2);
-        print(matr);
+        task10Matr(matr);
 
 /*
         switch (choice) {

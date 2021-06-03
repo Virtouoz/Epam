@@ -120,4 +120,29 @@ public class TasksArraysOfArrays {
         }
     }
 
+    //Задана матрица неотрицательных чисел. Посчитать сумму элементов в каждом столбце. Определить, какой
+    //столбец содержит максимальную сумму.
+    public static void task9Matr(int[][] matr) {
+        int max = 0;
+        int sumColumn = 0;
+        for (int i = 0; i < matr.length; i++) {
+            sumColumn = 0;
+            for (int j = 0; j < matr[i].length; j++) {
+                sumColumn += matr[i][j];
+            }
+            if (max < sumColumn) {
+                max = sumColumn;
+            }
+        }
+        System.out.println(max);
+    }
+
+    //Найти положительные элементы главной диагонали квадратной матрицы.
+    public static void task10Matr(int[][] matr){
+        for (int i = 0; i < matr.length; i++) {
+            System.out.print(matr[i][i]+" ");
+        }
+    }
+
+
 }
