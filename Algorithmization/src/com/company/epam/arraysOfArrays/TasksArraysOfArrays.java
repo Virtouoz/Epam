@@ -2,6 +2,16 @@ package com.company.epam.arraysOfArrays;
 
 public class TasksArraysOfArrays {
 
+    // Вывод матрицы в консоль
+    public static void print(int[][] matr) {
+        for (int i = 0; i < matr.length; i++) {
+            for (int j = 0; j < matr[i].length; j++) {
+                System.out.print(matr[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
     // Дана матрица. Вывести на экран все нечетные столбцы,
     // у которых первый элемент больше последнего.
     public static void task1Matr(int[][] matr) {
@@ -69,13 +79,13 @@ public class TasksArraysOfArrays {
         for (int i = 0; i < matr.length; i++) {
             for (int j = 0; j < matr[i].length; j++) {
                 if (i < matr.length / 2) {
-                    if (j > i-1 && j < matr.length - i) {
+                    if (j > i - 1 && j < matr.length - i) {
                         matr[i][j] = 1;
                     } else {
                         matr[i][j] = 0;
                     }
                 } else {
-                    matr[i][j] = matr[matr.length-i-1][j];
+                    matr[i][j] = matr[matr.length - i - 1][j];
                 }
                 System.out.print(matr[i][j]);
             }
@@ -96,6 +106,18 @@ public class TasksArraysOfArrays {
             System.out.println();
         }
         return result;
+    }
+
+    //В числовой матрице поменять местами два столбца любых столбца, т. е. все элементы одного столбца поставить
+    //на соответствующие им позиции другого, а его элементы второго переместить в первый. Номера столбцов вводит
+    //пользователь с клавиатуры.
+    public static void task8Matr(int[][] matr, int n, int m) {
+        int x = 2;
+        for (int i = 0; i < matr.length; i++) {
+            x = matr[i][n];
+            matr[i][n] = matr[i][m];
+            matr[i][m] = x;
+        }
     }
 
 }
