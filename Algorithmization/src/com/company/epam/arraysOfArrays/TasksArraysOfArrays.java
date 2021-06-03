@@ -1,12 +1,18 @@
 package com.company.epam.arraysOfArrays;
 
+import java.util.Random;
+
 public class TasksArraysOfArrays {
+
+    public static final int NUMBER_THREE = 3;
+    public static final int NUMBER_FIVE = 5;
+
 
     // Вывод матрицы в консоль
     public static void print(int[][] matr) {
         for (int i = 0; i < matr.length; i++) {
             for (int j = 0; j < matr[i].length; j++) {
-                System.out.print(matr[i][j]);
+                System.out.print(matr[i][j] + " ");
             }
             System.out.println();
         }
@@ -138,11 +144,55 @@ public class TasksArraysOfArrays {
     }
 
     //Найти положительные элементы главной диагонали квадратной матрицы.
-    public static void task10Matr(int[][] matr){
+    public static void task10Matr(int[][] matr) {
         for (int i = 0; i < matr.length; i++) {
-            System.out.print(matr[i][i]+" ");
+            System.out.print(matr[i][i] + " ");
         }
     }
 
+    //Матрицу 10x20 заполнить случайными числами от 0 до 15. Вывести на экран саму матрицу и номера строк, в
+    //которых число 5 встречается три и более раз.
+    public static void task11Matr() {
+        int[][] matr = new int[10][20];
+
+        for (int i = 0; i < matr.length; i++) {
+            for (int j = 0; j < matr[i].length; j++) {
+                Random random = new Random();
+                matr[i][j] = random.nextInt(15);
+            }
+        }
+
+        print(matr);
+
+        for (int i = 0; i < matr.length; i++) {
+            int counter = 0;
+            for (int j = 0; j < matr[i].length; j++) {
+                if (matr[i][j] == NUMBER_FIVE) {
+                    counter++;
+                }
+                if (counter == NUMBER_THREE) {
+                    System.out.println(i+1);
+                    break;
+                }
+            }
+        }
+
+
+    }
+
+    //
+    public static void task12Matr(){
+
+    }
+
+    //
+    public static void task12Matr(){
+
+    }
+
+    //
+    public static void task12Matr(){
+
+    }
 
 }

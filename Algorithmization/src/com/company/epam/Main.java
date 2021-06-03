@@ -31,8 +31,7 @@ public class Main {
             }
         }
 
-        print(matr);
-        task10Matr(matr);
+        task11Matr();
 
 /*
         switch (choice) {
