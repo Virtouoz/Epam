@@ -11,9 +11,9 @@ public class TasksArraysOfArrays {
 
     // Вывод матрицы в консоль
     public static void print(int[][] matr) {
-        for (int i = 0; i < matr.length; i++) {
-            for (int j = 0; j < matr[i].length; j++) {
-                System.out.printf("%3d", matr[i][j]);//+ "\t"
+        for (int[] ints : matr) {
+            for (int anInt : ints) {
+                System.out.printf("%3d", anInt);//+ "\t"
             }
             System.out.println();
         }
@@ -25,8 +25,8 @@ public class TasksArraysOfArrays {
     public static void task1Matr(int[][] matr) {
         for (int j = 0; j < matr[0].length; j++) {
             if (j % 2 == 0 && matr[0][j] > matr[matr.length - 1][j]) {
-                for (int i = 0; i < matr.length; i++) {
-                    System.out.print(matr[i][j]);
+                for (int[] ints : matr) {
+                    System.out.print(ints[j]);
                 }
                 System.out.println();
             }
@@ -47,8 +47,8 @@ public class TasksArraysOfArrays {
             System.out.print(matr[k][j]);
         }
         System.out.println();
-        for (int i = 0; i < matr.length; i++) {
-            System.out.print(matr[i][p]);
+        for (int[] ints : matr) {
+            System.out.print(ints[p]);
         }
     }
 
@@ -106,7 +106,7 @@ public class TasksArraysOfArrays {
         int result = 0;
         for (int i = 0; i < matr.length; i++) {
             for (int j = 0; j < matr[i].length; j++) {
-                matr[i][j] = Math.sin(((i * i) - (j * j)) / matr.length);
+                matr[i][j] = Math.sin(((Math.pow(i,2) - Math.pow(j,2)) / matr.length));
                 System.out.print(matr[i][j]);
                 if (matr[i][j] > 0)
                     result++;
@@ -120,7 +120,7 @@ public class TasksArraysOfArrays {
     // на соответствующие им позиции другого, а его элементы второго переместить в первый. Номера столбцов вводит
     // пользователь с клавиатуры.
     public static void task8Matr(int[][] matr, int n, int m) {
-        int x = 2;
+        int x;
         for (int i = 0; i < matr.length; i++) {
             x = matr[i][n];
             matr[i][n] = matr[i][m];
@@ -132,11 +132,11 @@ public class TasksArraysOfArrays {
     // столбец содержит максимальную сумму.
     public static void task9Matr(int[][] matr) {
         int max = 0;
-        int sumColumn = 0;
-        for (int i = 0; i < matr.length; i++) {
+        int sumColumn;
+        for (int[] ints : matr) {
             sumColumn = 0;
-            for (int j = 0; j < matr[i].length; j++) {
-                sumColumn += matr[i][j];
+            for (int anInt : ints) {
+                sumColumn += anInt;
             }
             if (max < sumColumn) {
                 max = sumColumn;
@@ -469,4 +469,7 @@ public class TasksArraysOfArrays {
             }
         }
     }
+
+
+
 }

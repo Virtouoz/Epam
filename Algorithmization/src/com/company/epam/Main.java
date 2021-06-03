@@ -1,23 +1,16 @@
 package com.company.epam;
 
-import java.util.Scanner;
-
-import static com.company.epam.arraysOfArrays.TasksArraysOfArrays.*;
-import static com.company.epam.oneDimensionalArrays.OneDimensionalArrays.*;
-import static java.lang.Math.random;
-
 public class Main {
 
     public static void main(String[] args) {
         // write your code here
 
-        Scanner scanner = new Scanner(System.in);
-        //System.out.println("Введите номер задачи (тема Одномерные массивы)");
-        //int choice = scanner.nextInt();
 
-        task13Matr();
 
-/*
+/*      Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите номер задачи (тема Одномерные массивы)");
+        int choice = scanner.nextInt();
+
         switch (choice) {
             case 1: {
                 task1(array, 3);
