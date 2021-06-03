@@ -15,23 +15,7 @@ public class Main {
         //System.out.println("Введите номер задачи (тема Одномерные массивы)");
         //int choice = scanner.nextInt();
 
-        int[] array = new int[15];
-        double[] dArray = new double[15];
-        for (int i = 0; i < dArray.length; i++) {
-            dArray[i] = i * Math.pow(-1, i);
-        }
-
-        int[][] matr = new int[6][6];
-        double[][] matrdouble = new double[6][6];
-        // task6Matr(matr);
-        // System.out.println(task7Matr(matrdouble));
-        for (int i = 0; i < matr.length; i++) {
-            for (int j = 0; j < matr[i].length; j++) {
-                matr[i][j] = i * (-1) + j;
-            }
-        }
-
-        task16Matr();
+        task12Matr();
 
 /*
         switch (choice) {

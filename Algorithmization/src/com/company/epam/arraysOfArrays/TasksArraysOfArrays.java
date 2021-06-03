@@ -182,9 +182,47 @@ public class TasksArraysOfArrays {
 
     }
 
+    // Поменять две строки в матрице.
+    public static void changeTwoLines(int[][] matr, int n, int m) {
+        int x;
+        x = 0;
+        for (int j = 0; j < matr[0].length; j++) {
+            x = matr[n][j];
+            matr[n][j] = matr[m][j];
+            matr[m][j] = x;
+        }
+    }
+
     // Отсортировать строки матрицы по возрастанию и убыванию значений элементов.
     public static void task12Matr() {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        int m;
+        int n;
+        m = scanner.nextInt();
+        n = scanner.nextInt();
+        int[][] matr = new int[m][n];
 
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                matr[i][j] = random.nextInt(11);
+            }
+        }
+        print(matr);
+
+        for (int newI = 0; newI < n - 1; newI++) {
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < m; j++) {
+                    if (matr[i][j] > matr[i + 1][j]) {
+                        changeTwoLines(matr, i, i + 1);
+                        break;
+                    } else if (matr[i][j] < matr[i + 1][j]) {
+                        break;
+                    }
+                }
+            }
+        }
+        print(matr);
     }
 
     // Отсотрировать стобцы матрицы по возрастанию и убыванию значений эементов.
