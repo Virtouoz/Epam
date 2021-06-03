@@ -10,35 +10,29 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите номер задачи (тема Одномерные массивы)");
-        int choice = scanner.nextInt();
+        //System.out.println("Введите номер задачи (тема Одномерные массивы)");
+        //int choice = scanner.nextInt();
 
         int[] array = new int[15];
         double[] dArray = new double[15];
+        for (int i = 0; i < dArray.length; i++) {
+            dArray[i] = i * Math.pow(-1, i);
+        }
 
-
-        int[][] matr = new int[5][5];
-        task4Matr(matr);
-
+        int[][] matr = new int[6][6];
+        double[][] matrdouble = new double[6][6];
+        //task5Matr(matr);
+        System.out.println(task7Matr(matrdouble));
         for (int i = 0; i < matr.length; i++) {
             for (int j = 0; j < matr[i].length; j++) {
                 matr[i][j] = i*(-1)+j;
             }
         }
-        for (int i = 0; i < matr.length; i++) {
-            for (int j = 0; j < matr[i].length; j++) {
-                System.out.print(matr[i][j]);
-            }
-            System.out.println();
-        }
 
 
-
-        for (int i = 0; i < array.length; i++) {
-            dArray[i] = i * Math.pow(-1, i);
-        }
-
+/*
         switch (choice) {
             case 1: {
                 task1(array, 3);
@@ -87,6 +81,7 @@ public class Main {
                 break;
             }
         }
+*/
 
     }
 }

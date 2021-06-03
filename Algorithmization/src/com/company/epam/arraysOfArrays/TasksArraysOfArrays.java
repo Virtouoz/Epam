@@ -54,7 +54,7 @@ public class TasksArraysOfArrays {
         for (int i = 0; i < matr.length; i++) {
             for (int j = 0; j < matr[i].length; j++) {
                 if (j < matr.length - i) {
-                    matr[i][j] = i+1;
+                    matr[i][j] = i + 1;
                 } else {
                     matr[i][j] = 0;
                 }
@@ -76,14 +76,18 @@ public class TasksArraysOfArrays {
     }
 
     //Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
-    public static void task7Matr(int[][] matr, int k, int p) {
-        for (int j = 0; j < matr[0].length; j++) {
-            System.out.print(matr[k][j]);
-        }
-        System.out.println();
+    public static int task7Matr(double[][] matr) {
+        int result = 0;
         for (int i = 0; i < matr.length; i++) {
-            System.out.print(matr[i][p]);
+            for (int j = 0; j < matr[i].length; j++) {
+                matr[i][j] = Math.sin(((i * i) - (j * j)) / matr.length);
+                System.out.print(matr[i][j]);
+                if (matr[i][j] > 0)
+                    result++;
+            }
+            System.out.println();
         }
+        return result;
     }
 
 }
