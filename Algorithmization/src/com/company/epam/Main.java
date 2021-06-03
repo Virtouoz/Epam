@@ -23,8 +23,8 @@ public class Main {
 
         int[][] matr = new int[6][6];
         double[][] matrdouble = new double[6][6];
-        //task5Matr(matr);
-        System.out.println(task7Matr(matrdouble));
+        task6Matr(matr);
+       // System.out.println(task7Matr(matrdouble));
         for (int i = 0; i < matr.length; i++) {
             for (int j = 0; j < matr[i].length; j++) {
                 matr[i][j] = i*(-1)+j;

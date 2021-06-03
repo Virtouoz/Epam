@@ -64,14 +64,22 @@ public class TasksArraysOfArrays {
         }
     }
 
-    //Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
-    public static void task6Matr(int[][] matr, int k, int p) {
-        for (int j = 0; j < matr[0].length; j++) {
-            System.out.print(matr[k][j]);
-        }
-        System.out.println();
+    // Сформировать квадратную матрицу порядка n по заданному образцу(n - четное).
+    public static void task6Matr(int[][] matr) {
         for (int i = 0; i < matr.length; i++) {
-            System.out.print(matr[i][p]);
+            for (int j = 0; j < matr[i].length; j++) {
+                if (i < matr.length / 2) {
+                    if (j > i-1 && j < matr.length - i) {
+                        matr[i][j] = 1;
+                    } else {
+                        matr[i][j] = 0;
+                    }
+                } else {
+                    matr[i][j] = matr[matr.length-i-1][j];
+                }
+                System.out.print(matr[i][j]);
+            }
+            System.out.println();
         }
     }
 
