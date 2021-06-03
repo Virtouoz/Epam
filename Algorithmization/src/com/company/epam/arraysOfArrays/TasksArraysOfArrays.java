@@ -23,7 +23,7 @@ public class TasksArraysOfArrays {
         }
     }
 
-    //Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
+    // Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
     public static void task3Matr(int[][] matr, int k, int p) {
         for (int j = 0; j < matr[0].length; j++) {
             System.out.print(matr[k][j]);
@@ -34,8 +34,23 @@ public class TasksArraysOfArrays {
         }
     }
 
+    // Сформировать квадратную матрицу порядка n по заданному образцу(n - четное).
+    public static void task4Matr(int[][] matr) {
+        for (int i = 0; i < matr.length; i++) {
+            for (int j = 0; j < matr[i].length; j++) {
+                if (i % 2 == 0) {
+                    matr[i][j] = j + 1;
+                } else {
+                    matr[i][j] = matr[i].length - j;
+                }
+                System.out.print(matr[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
     //Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
-    public static void task4Matr(int[][] matr, int k, int p) {
+    public static void task5Matr(int[][] matr, int k, int p) {
         for (int j = 0; j < matr[0].length; j++) {
             System.out.print(matr[k][j]);
         }
@@ -45,5 +60,26 @@ public class TasksArraysOfArrays {
         }
     }
 
+    //Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
+    public static void task6Matr(int[][] matr, int k, int p) {
+        for (int j = 0; j < matr[0].length; j++) {
+            System.out.print(matr[k][j]);
+        }
+        System.out.println();
+        for (int i = 0; i < matr.length; i++) {
+            System.out.print(matr[i][p]);
+        }
+    }
+
+    //Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
+    public static void task7Matr(int[][] matr, int k, int p) {
+        for (int j = 0; j < matr[0].length; j++) {
+            System.out.print(matr[k][j]);
+        }
+        System.out.println();
+        for (int i = 0; i < matr.length; i++) {
+            System.out.print(matr[i][p]);
+        }
+    }
 
 }

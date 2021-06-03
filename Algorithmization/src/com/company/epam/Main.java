@@ -19,6 +19,8 @@ public class Main {
 
 
         int[][] matr = new int[5][5];
+        task4Matr(matr);
+
         for (int i = 0; i < matr.length; i++) {
             for (int j = 0; j < matr[i].length; j++) {
                 matr[i][j] = i*(-1)+j;
@@ -31,7 +33,7 @@ public class Main {
             System.out.println();
         }
 
-        task3Matr(matr, 1,3);
+
 
         for (int i = 0; i < array.length; i++) {
             dArray[i] = i * Math.pow(-1, i);
@@ -85,18 +87,6 @@ public class Main {
                 break;
             }
         }
-
-        //task1(array, 3);
-        //task2(dArray, 5);
-        //task3(dArray);
-        //task4(dArray);
-        //task5(array);
-        //task6(dArray);
-        //task7(dArray);
-        //task8(dArray);
-        //task9(array);
-        //task10(array);
-
 
     }
 }
