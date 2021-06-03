@@ -13,10 +13,11 @@ public class TasksArraysOfArrays {
     public static void print(int[][] matr) {
         for (int i = 0; i < matr.length; i++) {
             for (int j = 0; j < matr[i].length; j++) {
-                System.out.print(matr[i][j] + " ");
+                System.out.printf("%3d", matr[i][j]);//+ "\t"
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     // Дана матрица. Вывести на экран все нечетные столбцы,
@@ -204,14 +205,14 @@ public class TasksArraysOfArrays {
             for (int i = 0; i < m; i++) {
                 Random random = new Random();
                 matr[i][j] = random.nextInt(2);
-                if (counter == j+1) {
+                if (counter == j + 1) {
                     matr[i][j] = 0;
                 }
                 if (matr[i][j] == 1) {
                     counter++;
                 }
             }
-            if(counter != j+1){
+            if (counter != j + 1) {
                 j--;
             }
         }
@@ -219,4 +220,187 @@ public class TasksArraysOfArrays {
         print(matr);
     }
 
+    // Найдите наибольший элемент матрицы и заменить все нечетные элементы на него.
+    public static void task15Matr() {
+        Scanner scanner = new Scanner(System.in);
+        int m = scanner.nextInt();
+        int n = scanner.nextInt();
+        int[][] matr = new int[m][n];
+
+        int maxElement = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                Random random = new Random();
+                matr[i][j] = random.nextInt(11);
+                if (maxElement < matr[i][j]) {
+                    maxElement = matr[i][j];
+                }
+            }
+        }
+        print(matr);
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (matr[i][j] % 2 == 1) {
+                    matr[i][j] = maxElement;
+                }
+            }
+        }
+        print(matr);
+    }
+
+    // Магическим квадратом порядка n называется квадратная матрица размера nxn,
+    // составленная из чисел 1, 2, 3, ..., n^2. Построить магический квадрат
+    // размером n*n.
+    public static void task16Matr() {
+        int N;
+        int[][] magicSquare;
+        int[][] magicSquareHelp;
+        int mid;
+        int k;
+        int l;
+        int value;
+        int swap;
+        String matrix;
+        Scanner read = new Scanner(System.in);
+
+        System.out.println("Введите N:");
+        N = read.nextInt();
+
+        if (N == 1) {
+            System.out.println("Магический квадрат " + 1 + " порядка:");
+            System.out.println(1);
+        }
+
+        if (N == 2) {
+            System.out.println("Магический квадрат 2 порядка не существует.");
+        }
+
+        if ((N - 1) % 2 == 0) {
+            magicSquare = new int[N][N];
+            mid = N / 2;
+            magicSquare[0][mid] = 1;
+            k = N - 1;
+            l = mid + 1;
+            for (int i = 2; i <= N * N; i++) {
+                if ((i - 1) % N == 0) {
+                    k += 2;
+                    l--;
+                    magicSquare[k][l] = i;
+                    k--;
+                    l++;
+                    continue;
+                }
+                if (k == -1) k = N - 1;
+                if (l == N) l = 0;
+                magicSquare[k][l] = i;
+                k--;
+                l++;
+            }
+            System.out.println("Магический квадрат " + N + " порядка:");
+            for (int i = 0; i < magicSquare.length; i++) {
+                matrix = "";
+                for (int j = 0; j < magicSquare[i].length; j++) {
+                    matrix += magicSquare[i][j] + " ";
+                }
+                System.out.println(matrix);
+            }
+        }
+
+        if (N % 4 == 0) {
+            magicSquare = new int[N][N];
+            magicSquareHelp = new int[N][N];
+            value = 1;
+            for (int i = 0; i < magicSquare.length; i++) {
+                for (int j = 0; j < magicSquare[i].length; j++) {
+                    magicSquare[i][j] = value;
+                    magicSquareHelp[i][j] = N * N + 1 - value;
+                    value++;
+                }
+            }
+            value = N / 4;
+            for (int i = 0; i < magicSquare.length; i++) {
+                if (value == 1) {
+                    k = 0;
+                } else {
+                    k = 1;
+                }
+                magicSquare[i][i] = magicSquareHelp[i][i];
+                magicSquare[N - 1 - i][i] = magicSquareHelp[N - 1 - i][i];
+                while (k != value) {
+                    if (magicSquare.length > i + k * 4) {
+                        magicSquare[i][i + k * 4] = magicSquareHelp[i][i + k * 4];
+                        magicSquare[N - 1 - i][i + k * 4] = magicSquareHelp[N - 1 - i][i + k * 4];
+
+                        magicSquare[i + k * 4][i] = magicSquareHelp[i + k * 4][i];
+                        magicSquare[N - 1 - i - k * 4][i] = magicSquareHelp[N - 1 - i - k * 4][i];
+                    }
+                    k++;
+                }
+            }
+            System.out.println("Магический квадрат " + N + " порядка:");
+            for (int i = 0; i < magicSquare.length; i++) {
+                matrix = "";
+                for (int j = 0; j < magicSquare[i].length; j++) {
+                    matrix += magicSquare[i][j] + " ";
+                }
+                System.out.println(matrix);
+            }
+        }
+        if ((N - 2) % 4 == 0) {
+            magicSquare = new int[N][N];
+            mid = N / 4;
+            magicSquare[0][mid] = 1;
+            k = N / 2 - 1;
+            l = mid + 1;
+            for (int i = 2; i <= N * N / 4; i++) {
+                if ((i - 1) % (N / 2) == 0) {
+                    k += 2;
+                    l--;
+                    magicSquare[k][l] = i;
+                    k--;
+                    l++;
+                    continue;
+                }
+                if (k == -1) k = N / 2 - 1;
+                if (l == N / 2) l = 0;
+                magicSquare[k][l] = i;
+                k--;
+                l++;
+            }
+            for (int i = 0; i < N / 2; i++) {
+                for (int j = 0; j < N / 2; j++) {
+                    magicSquare[i + N / 2][j + N / 2] = magicSquare[i][j] + N * N / 4;
+                    magicSquare[i][j + N / 2] = magicSquare[i][j] + N * N / 2;
+                    magicSquare[i + N / 2][j] = magicSquare[i][j] + N * N / 4 * 3;
+                }
+            }
+            for (int i = 0; i < N / 2 - 3; i++) {
+                for (int j = 0; j < N / 2; j++) {
+                    swap = magicSquare[j][(N - (N / 2 - 3)) / 2 + i];
+                    magicSquare[j][(N - (N / 2 - 3)) / 2 + i] = magicSquare[j + N / 2][(N - (N / 2 - 3)) / 2 + i];
+                    magicSquare[j + N / 2][(N - (N / 2 - 3)) / 2 + i] = swap;
+                }
+            }
+            swap = magicSquare[0][0];
+            magicSquare[0][0] = magicSquare[N / 2][0];
+            magicSquare[N / 2][0] = swap;
+            swap = magicSquare[N / 2 - 1][0];
+            magicSquare[N / 2 - 1][0] = magicSquare[N - 1][0];
+            magicSquare[N - 1][0] = swap;
+            for (int i = 1; i <= N / 2 - 2; i++) {
+                swap = magicSquare[i][1];
+                magicSquare[i][1] = magicSquare[i + N / 2][1];
+                magicSquare[i + N / 2][1] = swap;
+            }
+            System.out.println("Магический квадрат " + N + " порядка:");
+            for (int i = 0; i < magicSquare.length; i++) {
+                matrix = "";
+                for (int j = 0; j < magicSquare[i].length; j++) {
+                    matrix += magicSquare[i][j] + " ";
+                }
+                System.out.println(matrix);
+            }
+        }
+    }
 }
