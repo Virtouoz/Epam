@@ -31,7 +31,7 @@ public class Main {
             }
         }
 
-        task11Matr();
+        task14Matr();
 
 /*
         switch (choice) {

@@ -1,6 +1,7 @@
 package com.company.epam.arraysOfArrays;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class TasksArraysOfArrays {
 
@@ -99,7 +100,7 @@ public class TasksArraysOfArrays {
         }
     }
 
-    //Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
+    // Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
     public static int task7Matr(double[][] matr) {
         int result = 0;
         for (int i = 0; i < matr.length; i++) {
@@ -114,9 +115,9 @@ public class TasksArraysOfArrays {
         return result;
     }
 
-    //В числовой матрице поменять местами два столбца любых столбца, т. е. все элементы одного столбца поставить
-    //на соответствующие им позиции другого, а его элементы второго переместить в первый. Номера столбцов вводит
-    //пользователь с клавиатуры.
+    // В числовой матрице поменять местами два столбца любых столбца, т. е. все элементы одного столбца поставить
+    // на соответствующие им позиции другого, а его элементы второго переместить в первый. Номера столбцов вводит
+    // пользователь с клавиатуры.
     public static void task8Matr(int[][] matr, int n, int m) {
         int x = 2;
         for (int i = 0; i < matr.length; i++) {
@@ -126,8 +127,8 @@ public class TasksArraysOfArrays {
         }
     }
 
-    //Задана матрица неотрицательных чисел. Посчитать сумму элементов в каждом столбце. Определить, какой
-    //столбец содержит максимальную сумму.
+    // Задана матрица неотрицательных чисел. Посчитать сумму элементов в каждом столбце. Определить, какой
+    // столбец содержит максимальную сумму.
     public static void task9Matr(int[][] matr) {
         int max = 0;
         int sumColumn = 0;
@@ -143,15 +144,15 @@ public class TasksArraysOfArrays {
         System.out.println(max);
     }
 
-    //Найти положительные элементы главной диагонали квадратной матрицы.
+    // Найти положительные элементы главной диагонали квадратной матрицы.
     public static void task10Matr(int[][] matr) {
         for (int i = 0; i < matr.length; i++) {
             System.out.print(matr[i][i] + " ");
         }
     }
 
-    //Матрицу 10x20 заполнить случайными числами от 0 до 15. Вывести на экран саму матрицу и номера строк, в
-    //которых число 5 встречается три и более раз.
+    // Матрицу 10x20 заполнить случайными числами от 0 до 15. Вывести на экран саму матрицу и номера строк, в
+    // которых число 5 встречается три и более раз.
     public static void task11Matr() {
         int[][] matr = new int[10][20];
 
@@ -171,7 +172,7 @@ public class TasksArraysOfArrays {
                     counter++;
                 }
                 if (counter == NUMBER_THREE) {
-                    System.out.println(i+1);
+                    System.out.println(i + 1);
                     break;
                 }
             }
@@ -180,19 +181,42 @@ public class TasksArraysOfArrays {
 
     }
 
-    //
-    public static void task12Matr(){
+    // Отсортировать строки матрицы по возрастанию и убыванию значений элементов.
+    public static void task12Matr() {
 
     }
 
-    //
-    public static void task12Matr(){
+    // Отсотрировать стобцы матрицы по возрастанию и убыванию значений эементов.
+    public static void task13Matr() {
 
     }
 
-    //
-    public static void task12Matr(){
+    // Сформировать случайную матрицу m x n, состоящую из нулей и единиц, причем в каждом столбце число
+    // единиц равно номеру столбца.
+    public static void task14Matr() {
+        Scanner scanner = new Scanner(System.in);
+        int m = scanner.nextInt();
+        int n = scanner.nextInt();
+        int[][] matr = new int[m][n];
 
+        for (int j = 0; j < n; j++) {
+            int counter = 0;
+            for (int i = 0; i < m; i++) {
+                Random random = new Random();
+                matr[i][j] = random.nextInt(2);
+                if (counter == j+1) {
+                    matr[i][j] = 0;
+                }
+                if (matr[i][j] == 1) {
+                    counter++;
+                }
+            }
+            if(counter != j+1){
+                j--;
+            }
+        }
+
+        print(matr);
     }
 
 }
