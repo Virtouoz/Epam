@@ -227,6 +227,34 @@ public class TasksArraysOfArrays {
 
     // Отсотрировать стобцы матрицы по возрастанию и убыванию значений эементов.
     public static void task13Matr() {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        int m;
+        int n;
+        m = scanner.nextInt();
+        n = scanner.nextInt();
+        int[][] matr = new int[m][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                matr[i][j] = random.nextInt(11);
+            }
+        }
+        print(matr);
+
+        for (int newI = 0; newI < n - 1; newI++) {
+            for (int j = 0; j < n - 1; j++) {
+                for (int i = 0; i < m; i++) {
+                    if (matr[i][j] > matr[i][j + 1]) {
+                        task8Matr(matr, j, j + 1);
+                        break;
+                    } else if (matr[i][j] < matr[i][j+ 1]) {
+                        break;
+                    }
+                }
+            }
+        }
+        print(matr);
 
     }
 

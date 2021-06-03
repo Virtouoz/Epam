@@ -15,7 +15,7 @@ public class Main {
         //System.out.println("Введите номер задачи (тема Одномерные массивы)");
         //int choice = scanner.nextInt();
 
-        task12Matr();
+        task13Matr();
 
 /*
         switch (choice) {
