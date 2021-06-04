@@ -120,7 +120,7 @@ public class OneDimensionalArraysSortingOptions {
 
     }
 
-    // Сортировка обменами
+    // Сортировка обменами (пузырьком)
     public static void task4() {
         int[] array1;
         int box;
@@ -142,22 +142,78 @@ public class OneDimensionalArraysSortingOptions {
         System.out.println(numberOfPermutations);
     }
 
-    // Сортировка обменами (пузырьком)
-    public static void task5() {
+    public static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 
+    public static int min(int[] array, int begin, int end) {
+        int minVal = array[begin];
+        int minIndex = begin;
+        for (int i = begin + 1; i <= end; i++) {
+            if (array[i] < minVal) {
+                minVal = array[i];
+                minIndex = i;
+            }
+        }
+        return minIndex;
     }
 
     // Сортировка вставками
-    public static void task6() {
-
+    public static void sort(int[] array) {
+        int length = array.length;
+        for (int i = 1; i < length; i++) {
+            for (int j = i; j >= 1; j--) {
+                if (array[j] < array[j - 1])
+                    swap(array, j, j - 1);
+                else
+                    break;
+            }
+        }
     }
 
+    public static void task5() {
+        int[] array1;
+        array1 = fillArray(createArray());
+        printArray(array1);
+        sort(array1);
+        printArray(array1);
+    }
+
+
     // Сортировка Шелла
+    public static void ShellSort(int[] mass) {
+        for (int step = mass.length / 2; step > 0; step /= 2) {
+            int i;
+            int j;
+            for (i = step; i < mass.length; i++) {
+                int tmp = mass[i];
+                for (j = i; j >= step; j -= step) {
+                    if (tmp < mass[j - step])
+                        mass[j] = mass[j - step];
+                    else
+                        break;
+                }
+                mass[j] = tmp;
+            }
+        }
+    }
+
+    public static void task6() {
+        int[] array1;
+        array1 = fillArray(createArray());
+        printArray(array1);
+        ShellSort(array1);
+        printArray(array1);
+    }
+
+    //
     public static void task7() {
 
     }
 
-    //Сортировка обменами
+    //
     public static void task8() {
 
     }
