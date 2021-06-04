@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
 
-        task3();
+        task4();
 
 
 /*      Scanner scanner = new Scanner(System.in);

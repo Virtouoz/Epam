@@ -120,4 +120,46 @@ public class OneDimensionalArraysSortingOptions {
 
     }
 
+    // Сортировка обменами
+    public static void task4() {
+        int[] array1;
+        int box;
+        int numberOfPermutations = 0;
+        array1 = fillArray(createArray());
+        printArray(array1);
+
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array1.length - 1; j++) {
+                if (array1[j] > array1[j + 1]) {
+                    box = array1[j];
+                    array1[j] = array1[j + 1];
+                    array1[j + 1] = box;
+                    numberOfPermutations++;
+                }
+            }
+        }
+        printArray(array1);
+        System.out.println(numberOfPermutations);
+    }
+
+    // Сортировка обменами (пузырьком)
+    public static void task5() {
+
+    }
+
+    // Сортировка вставками
+    public static void task6() {
+
+    }
+
+    // Сортировка Шелла
+    public static void task7() {
+
+    }
+
+    //Сортировка обменами
+    public static void task8() {
+
+    }
+
 }
