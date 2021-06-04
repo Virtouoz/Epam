@@ -1,10 +1,13 @@
 package com.company.epam;
 
+import static com.company.epam.oneDimensionalArraysSortingOptions.OneDimensionalArraysSortingOptions.*;
+
 public class Main {
 
     public static void main(String[] args) {
         // write your code here
 
+        task1();
 
 
 /*      Scanner scanner = new Scanner(System.in);
