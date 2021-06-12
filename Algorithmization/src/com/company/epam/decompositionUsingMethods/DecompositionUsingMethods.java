@@ -124,4 +124,77 @@ public class DecompositionUsingMethods {
         System.out.println(result);
     }
 
+    // Написать метод(методы), проверяющий, являются ли данные три числа взаимно простыми.
+    public static void task6() {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
+
+        System.out.println(gcd(a, b) == gcd(b, c) && gcd(a, b) == gcd(a, c) && gcd(a, b) == 1);
+    }
+
+    public static long factorial(int n) {
+        if (n > 20) throw new IllegalArgumentException(n + " is out of range");
+        return (1 > n) ? 1 : n * factorial(n - 1);
+    }
+
+    // Написать метод(методы) для вычисления суммы факториалов всех нечетных чисел от 1 до 9.
+    public static void task7() {
+        long result;
+        result = factorial(1) + factorial(3) + factorial(5) + factorial(7) + factorial(9);
+        System.out.println(result);
+    }
+
+    //
+    public static void task8() {
+
+    }
+
+    //
+    public static void task9() {
+
+    }
+
+    //
+    public static void task10() {
+
+    }
+
+    //
+    public static void task11() {
+
+    }
+
+    //
+    public static void task12() {
+
+    }
+
+    //
+    public static void task13() {
+
+    }
+
+
+    //
+    public static void task14() {
+
+    }
+
+    //
+    public static void task15() {
+
+    }
+
+    //
+    public static void task16() {
+
+    }
+
+    //
+    public static void task17() {
+
+    }
+
 }
