@@ -44,6 +44,53 @@ public class DecompositionUsingMethods {
         System.out.println(6 * triangleS);
     }
 
-    //
+    static int[] createArray() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        return new int[n];
+    }
 
+    static void printArray(int[] array) {
+        for (int element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+
+    // На плоскости заданы своими координатами n точек. Написать метод(методы), определяющие, между какими
+    // из пар точек самое большое расстояние. Указание. Координаты точек занести в массив.
+    public static void task4() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        double[] array1 = new double[n];
+        double[] array2 = new double[n];
+
+        for (int i = 0; i < array1.length; i++) {
+            System.out.print("x = ");
+            array1[i] = scanner.nextFloat();
+            System.out.print("y = ");
+            array2[i] = scanner.nextFloat();
+        }
+
+        int indexI = 0;
+        int indexJ = 0;
+        double maxDistance = 0;
+        double distance;
+
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array2.length; j++) {
+                distance = Math.hypot(array1[i] - array1[j], array2[i] - array2[j]);
+                if (maxDistance < distance) {
+                    maxDistance = distance;
+                    indexI = i;
+                    indexJ = j;
+                }
+            }
+        }
+
+        System.out.println(array1[indexI] + " " + array1[indexI]);
+        System.out.println(array1[indexJ] + " " + array1[indexJ]);
+
+    }
 }
