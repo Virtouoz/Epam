@@ -1,5 +1,6 @@
 package com.company.epam.decompositionUsingMethods;
 
+import java.util.Random;
 import java.util.Scanner;
 
 import static java.lang.Math.*;
@@ -50,13 +51,20 @@ public class DecompositionUsingMethods {
         return new int[n];
     }
 
+    static int[] fillArray(int[] array) {
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(10) + 1;
+        }
+        return array;
+    }
+
     static void printArray(int[] array) {
         for (int element : array) {
             System.out.print(element + " ");
         }
         System.out.println();
     }
-
 
     // На плоскости заданы своими координатами n точек. Написать метод(методы), определяющие, между какими
     // из пар точек самое большое расстояние. Указание. Координаты точек занести в массив.
@@ -93,4 +101,27 @@ public class DecompositionUsingMethods {
         System.out.println(array1[indexJ] + " " + array1[indexJ]);
 
     }
+
+    // Составить программу, которая в массиве A[N] находит второе по величине число (вывести на печать число,
+    // которое меньше максимального элемента массива, но больше всех других элементов).
+    public static void task5() {
+        int[] array1;
+        array1 = fillArray(createArray());
+        int maxNumber = 0;
+        int result = 0;
+        for (int element : array1) {
+            if (maxNumber < element) {
+                maxNumber = element;
+            }
+        }
+        for (int element : array1) {
+            if (result < element && element < maxNumber) {
+                result = element;
+            }
+        }
+
+        printArray(array1);
+        System.out.println(result);
+    }
+
 }
