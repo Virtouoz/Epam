@@ -5,34 +5,31 @@ import java.util.Scanner;
 
 public class OneDimensionalArraysSortingOptions {
 
-    public static int[] createArray() {
+    static int[] createArray() {
         Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
         int n = scanner.nextInt();
-        int[] array = new int[n];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(11);
-        }
-        return array;
+        return new int[n];
     }
 
-    public static int[] fillArray(int[] array) {
+    static int[] createArrayNoZero() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        return new int[n];
+    }
+
+    static int[] fillArray(int[] array) {
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(11);
+            array[i] = random.nextInt(10) + 1;
         }
         return array;
     }
 
-    public static void printArray(int[] array) {
+    static void printArray(int[] array) {
         for (int element : array) {
             System.out.print(element + " ");
         }
         System.out.println();
-    }
-
-    public static void sortArray(int[] array) {
-
     }
 
     // Заданы два одномерных массива с различным количеством элементов и натуральное число k. Объединить их в
@@ -142,7 +139,7 @@ public class OneDimensionalArraysSortingOptions {
         System.out.println(numberOfPermutations);
     }
 
-    public static void swap(int[] array, int i, int j) {
+    static void swap(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
@@ -161,7 +158,7 @@ public class OneDimensionalArraysSortingOptions {
     }
 
     // Сортировка вставками
-    public static void sort(int[] array) {
+    static void sort(int[] array) {
         int length = array.length;
         for (int i = 1; i < length; i++) {
             for (int j = i; j >= 1; j--) {
@@ -183,7 +180,7 @@ public class OneDimensionalArraysSortingOptions {
 
 
     // Сортировка Шелла
-    public static void ShellSort(int[] mass) {
+    static void ShellSort(int[] mass) {
         for (int step = mass.length / 2; step > 0; step /= 2) {
             int i;
             int j;
@@ -208,13 +205,85 @@ public class OneDimensionalArraysSortingOptions {
         printArray(array1);
     }
 
-    //
+    // Требуется указать те места, на которые нужно вставлять элементы последовательности "2" в "1";
     public static void task7() {
+        int[] array1;
+        int[] array2;
+        int[] array3;
+        int[] array4;
 
+        array1 = fillArray(createArray());
+        sort(array1);
+        array2 = fillArray(createArray());
+        sort(array2);
+        array3 = new int[array1.length + array2.length];
+        array4 = new int[array2.length];
+
+        printArray(array1);
+        printArray(array2);
+
+        int i;
+        int j;
+        int k;
+
+        for (i = 0, j = 0, k = 0; i < array1.length && j < array2.length; ) {
+            if (array1[i] < array2[j]) {
+                array3[i + j] = array1[i];
+                i++;
+            } else {
+                array3[i + j] = array2[j];
+                array4[k] = i;
+                k++;
+                j++;
+            }
+        }
+
+        if (i < array1.length) {
+            array3[i + j] = array1[i];
+        }
+        if (j < array2.length) {
+            array3[i + j] = array2[j];
+            array4[k] = i;
+        }
+
+        printArray(array3);
+        printArray(array4);
     }
 
-    //
+    static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+
+    static int lcm(int a, int b) {
+        return a / gcd(a, b) * b;
+    }
+
+    // Составить программу, которая приводит эти дроби к общему
+    // знаменателю и упорядочивает их в порядке возрастания.
     public static void task8() {
+        int[] array1;
+        int[] array2;
+
+        array1 = fillArray(createArrayNoZero());
+        array2 = fillArray(createArrayNoZero());
+
+        printArray(array1);
+        printArray(array2);
+
+        int box = 1;
+        for (int j : array2) {
+            box = lcm(box, j);
+        }
+
+        for (int i = 0; i < array1.length; i++) {
+            array1[i] = array1[i] * (box / array2[i]);
+            array2[i] = box;
+        }
+
+        sort(array1);
+
+        printArray(array1);
+        printArray(array2);
 
     }
 
