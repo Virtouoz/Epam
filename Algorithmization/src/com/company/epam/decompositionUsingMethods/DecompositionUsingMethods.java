@@ -1,10 +1,12 @@
 package com.company.epam.decompositionUsingMethods;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
 
-import static java.lang.Math.*;
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
 
 public class DecompositionUsingMethods {
 
@@ -218,6 +220,30 @@ public class DecompositionUsingMethods {
 
     // Написать метод(методы), определяющий, в каком из данных двух чисел больше цифр
     public static void task11() {
+        Scanner scanner = new Scanner(System.in);
+        HashSet<Integer> listNumberN = new HashSet<>();
+        HashSet<Integer> listNumberM = new HashSet<>();
+        int N = scanner.nextInt();
+        int M = scanner.nextInt();
+        int n = N;
+        int m = M;
+
+
+        while (n > 0) {
+            listNumberN.add(n % 10);
+            n = n / 10;
+        }
+
+        while (m > 0) {
+            listNumberM.add(m % 10);
+            m = m / 10;
+        }
+
+        if (listNumberN.size() > listNumberM.size()) {
+            System.out.println(N + " size = " + listNumberN.size());
+        } else {
+            System.out.println(M + " size = " + listNumberM.size());
+        }
 
     }
 
