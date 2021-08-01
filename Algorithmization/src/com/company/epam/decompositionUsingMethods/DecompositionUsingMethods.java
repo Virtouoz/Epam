@@ -67,6 +67,14 @@ public class DecompositionUsingMethods {
         System.out.println();
     }
 
+    static void printArray(Integer[] array) {
+        for (int element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+
     // На плоскости заданы своими координатами n точек. Написать метод(методы), определяющие, между какими
     // из пар точек самое большое расстояние. Указание. Координаты точек занести в массив.
     public static void task4() {
@@ -193,8 +201,9 @@ public class DecompositionUsingMethods {
     // являются цифры числа N
     public static void task10() {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
         ArrayList<Integer> list = new ArrayList<>();
+        int n = scanner.nextInt();
+
         while (n > 0) {
             list.add(n % 10);
             n = n / 10;
@@ -204,9 +213,7 @@ public class DecompositionUsingMethods {
         Integer[] daysArray = list.toArray(new Integer[0]);
 
         System.out.println("Arraylist contains: ");
-        for (int aNumber : daysArray) {
-            System.out.print(aNumber + " ");
-        }
+        printArray(daysArray);
     }
 
     // Написать метод(методы), определяющий, в каком из данных двух чисел больше цифр
