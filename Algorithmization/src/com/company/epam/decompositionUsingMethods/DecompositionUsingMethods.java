@@ -1,5 +1,6 @@
 package com.company.epam.decompositionUsingMethods;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
@@ -247,34 +248,67 @@ public class DecompositionUsingMethods {
 
     }
 
+    public static int sumValue(double n) {
+        int sum = 0;
+        while (n != 0) {
+            sum += (n % 10);
+            n /= 10;
+        }
+        return sum;
+    }
+
     // Даны натуральные числа К и N. Написать метод(методы) формирования массива А, элементами которого
     // являются числа, сумма цифр которых равна К и которые не большее N.
     public static void task12() {
+        Scanner scanner = new Scanner(System.in);
+        double k = scanner.nextDouble();
+        double n = scanner.nextDouble();
+        ArrayList<Double> list = new ArrayList<>();
+        double i = 0;
+
+        while (i++ < n) {
+            if (sumValue(i) == k) {
+                list.add(i);
+            }
+        }
+
+        DecimalFormat dF = new DecimalFormat();
+        System.out.println("Array: ");
+        for (Double elem : list) {
+            System.out.print(dF.format(elem)+" ");
+        }
 
     }
 
-    //
+    // Два простых числа называются «близнецами», если они отличаются друг от друга на 2 (например, 41 и 43).
+    // Найти и напечатать все пары «близнецов» из отрезка [n,2n], где n - заданное натуральное число больше 2. Для
+    // решения задачи использовать декомпозицию.
     public static void task13() {
 
     }
 
 
-    //
+    // Натуральное число, в записи которого n цифр, называется числом Армстронга, если сумма его цифр,
+    // возведенная в степень n, равна самому числу. Найти все числа Армстронга от 1 до k. Для решения задачи
+    // использовать декомпозицию.
     public static void task14() {
 
     }
 
-    //
+    // Найти все натуральные n-значные числа, цифры в которых образуют строго возрастающую
+    // последовательность (например, 1234, 5789). Для решения задачи использовать декомпозицию.
     public static void task15() {
 
     }
 
-    //
+    // Написать программу, определяющую сумму n - значных чисел, содержащих только нечетные цифры.
+    // Определить также, сколько четных цифр в найденной сумме. Для решения задачи использовать декомпозицию.
     public static void task16() {
 
     }
 
-    //
+    // Из заданного числа вычли сумму его цифр. Из результата вновь вычли сумму его цифр и т.д. Сколько таких
+    // действий надо произвести, чтобы получился нуль? Для решения задачи использовать декомпозицию.
     public static void task17() {
 
     }
