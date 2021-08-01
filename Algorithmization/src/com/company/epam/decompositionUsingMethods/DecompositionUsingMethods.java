@@ -1,5 +1,6 @@
 package com.company.epam.decompositionUsingMethods;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -146,27 +147,75 @@ public class DecompositionUsingMethods {
         System.out.println(result);
     }
 
-    //
+    // Задан массив D. Определить следующие суммы: D[1] + D[2] + D[3]; D[3] + D[4] + D[5]; D[4] +D[5] +D[6].
+    // Пояснение. Составить метод(методы) для вычисления суммы трех последовательно расположенных элементов
+    // массива с номерами от k до m
     public static void task8() {
-
+        int[] array1;
+        array1 = fillArray(createArray());
+        printArray(array1);
+        Scanner scanner = new Scanner(System.in);
+        int k = scanner.nextInt();
+        int m = scanner.nextInt();
+        int result = 0;
+        for (int i = k; i < m; i++) {
+            result += array1[i];
+        }
+        System.out.println(result);
     }
 
-    //
+    // Даны числа X, Y, Z, Т — длины сторон четырехугольника. Написать метод(методы) вычисления его площади,
+    // если угол между сторонами длиной X и Y— прямой.
     public static void task9() {
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        int z = scanner.nextInt();
+        int t = scanner.nextInt();
+        double result;
+        int p;
 
+        p = (x + y + z + t) / 2;
+        result = Math.sqrt((p - x) * (p - y) * (p - z) * (p - t));
+        System.out.println(result);
     }
 
-    //
+    public static ArrayList<Integer> reverseArrayList(ArrayList<Integer> alist) {
+        for (int i = 0; i < alist.size() / 2; i++) {
+            Integer temp = alist.get(i);
+            alist.set(i, alist.get(alist.size() - i - 1));
+            alist.set(alist.size() - i - 1, temp);
+        }
+        return alist;
+    }
+
+    // Дано натуральное число N. Написать метод(методы) для формирования массива, элементами которого
+    // являются цифры числа N
     public static void task10() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        ArrayList<Integer> list = new ArrayList<>();
+        while (n > 0) {
+            list.add(n % 10);
+            n = n / 10;
+        }
 
+        reverseArrayList(list);
+        Integer[] daysArray = list.toArray(new Integer[0]);
+
+        System.out.println("Arraylist contains: ");
+        for (int aNumber : daysArray) {
+            System.out.print(aNumber + " ");
+        }
     }
 
-    //
+    // Написать метод(методы), определяющий, в каком из данных двух чисел больше цифр
     public static void task11() {
 
     }
 
-    //
+    // Даны натуральные числа К и N. Написать метод(методы) формирования массива А, элементами которого
+    // являются числа, сумма цифр которых равна К и которые не большее N.
     public static void task12() {
 
     }
