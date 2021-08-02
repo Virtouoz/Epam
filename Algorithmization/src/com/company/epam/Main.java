@@ -1,14 +1,11 @@
 package com.company.epam;
 
-import static com.company.epam.decompositionUsingMethods.DecompositionUsingMethods.*;
-
 public class Main {
 
     public static void main(String[] args) {
         // write your code here
 
-        task17();
-
+        //task17();
 
 /*      Scanner scanner = new Scanner(System.in);
         System.out.println("Введите номер задачи (тема Одномерные массивы)");
