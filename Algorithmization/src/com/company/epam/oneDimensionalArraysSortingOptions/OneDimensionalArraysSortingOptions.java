@@ -17,7 +17,7 @@ public class OneDimensionalArraysSortingOptions {
         return new int[n];
     }
 
-    static int[] fillArray(int[] array) {
+    static int[]    fillArray(int[] array) {
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(10) + 1;
