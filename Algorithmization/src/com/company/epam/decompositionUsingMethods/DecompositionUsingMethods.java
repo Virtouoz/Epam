@@ -1,12 +1,12 @@
 package com.company.epam.decompositionUsingMethods;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
 
-import static java.lang.Math.pow;
-import static java.lang.Math.sqrt;
+import static java.lang.Math.*;
 
 public class DecompositionUsingMethods {
 
@@ -190,13 +190,12 @@ public class DecompositionUsingMethods {
         System.out.println(result);
     }
 
-    public static ArrayList<Integer> reverseArrayList(ArrayList<Integer> alist) {
+    public static void reverseArrayList(ArrayList<Integer> alist) {
         for (int i = 0; i < alist.size() / 2; i++) {
             Integer temp = alist.get(i);
             alist.set(i, alist.get(alist.size() - i - 1));
             alist.set(alist.size() - i - 1, temp);
         }
-        return alist;
     }
 
     // Дано натуральное число N. Написать метод(методы) для формирования массива, элементами которого
@@ -275,7 +274,6 @@ public class DecompositionUsingMethods {
         for (Double elem : list) {
             System.out.format("%.0f ", elem);
         }
-
     }
 
     static boolean isPrime(int n) //funton for checking prime
@@ -305,12 +303,32 @@ public class DecompositionUsingMethods {
         }
     }
 
+    public static boolean check(BigInteger number) {
+        ArrayList<BigInteger> list = new ArrayList<>();
+        BigInteger n = number;
+        int check = 0;
+        while (n.compareTo(BigInteger.valueOf(0)) > 0) {
+            list.add(n.mod(BigInteger.valueOf(10)));
+            n = n.divide(BigInteger.valueOf(10));
+        }
+        for (BigInteger elem : list) {
+            check += pow(elem.intValue(), list.size());
+        }
+        return number.compareTo(BigInteger.valueOf(check)) == 0;
+    }
 
     // Натуральное число, в записи которого n цифр, называется числом Армстронга, если сумма его цифр,
     // возведенная в степень n, равна самому числу. Найти все числа Армстронга от 1 до k. Для решения задачи
     // использовать декомпозицию.
     public static void task14() {
-
+        Scanner scanner = new Scanner(System.in);
+        BigInteger k = scanner.nextBigInteger();
+        BigInteger i = BigInteger.valueOf(0);
+        for (; (i.compareTo(k) < 0); i = i.add(BigInteger.ONE)) {
+            if (check(i)) {
+                System.out.println(i);
+            }
+        }
     }
 
     // Найти все натуральные n-значные числа, цифры в которых образуют строго возрастающую
