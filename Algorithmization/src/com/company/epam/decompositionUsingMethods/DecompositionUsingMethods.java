@@ -1,6 +1,5 @@
 package com.company.epam.decompositionUsingMethods;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
@@ -272,10 +271,9 @@ public class DecompositionUsingMethods {
             }
         }
 
-        DecimalFormat dF = new DecimalFormat();
         System.out.println("Array: ");
         for (Double elem : list) {
-            System.out.print(dF.format(elem)+" ");
+            System.out.format("%.0f ", elem);
         }
 
     }
