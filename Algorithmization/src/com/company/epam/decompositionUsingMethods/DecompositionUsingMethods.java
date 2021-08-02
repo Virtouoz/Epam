@@ -278,11 +278,31 @@ public class DecompositionUsingMethods {
 
     }
 
+    static boolean isPrime(int n) //funton for checking prime
+    {
+        int count = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0)
+                count++;
+        }
+        return count == 2;
+    }
+
     // Два простых числа называются «близнецами», если они отличаются друг от друга на 2 (например, 41 и 43).
     // Найти и напечатать все пары «близнецов» из отрезка [n,2n], где n - заданное натуральное число больше 2. Для
     // решения задачи использовать декомпозицию.
     public static void task13() {
+        int n;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the search range: ");
+        n = scanner.nextInt();
+        System.out.println("The Twin Prime Numbers within the given range [" + n + "," + 2 * n + "] are : ");
 
+        for (int i = n; i <= (2 * n - 2); i++) {
+            if (isPrime(i) && isPrime(i + 2)) {
+                System.out.print("(" + i + "," + (i + 2) + ") ");
+            }
+        }
     }
 
 
