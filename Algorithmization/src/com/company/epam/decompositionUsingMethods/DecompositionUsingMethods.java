@@ -255,6 +255,15 @@ public class DecompositionUsingMethods {
         return sum;
     }
 
+    public static int sumValue(int n) {
+        int sum = 0;
+        while (n != 0) {
+            sum += (n % 10);
+            n /= 10;
+        }
+        return sum;
+    }
+
     // Даны натуральные числа К и N. Написать метод(методы) формирования массива А, элементами которого
     // являются числа, сумма цифр которых равна К и которые не большее N.
     public static void task12() {
@@ -346,7 +355,14 @@ public class DecompositionUsingMethods {
     // Из заданного числа вычли сумму его цифр. Из результата вновь вычли сумму его цифр и т.д. Сколько таких
     // действий надо произвести, чтобы получился нуль? Для решения задачи использовать декомпозицию.
     public static void task17() {
-
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
+        int numberIterations = 0;
+        while (number > 1) {
+            number -= sumValue(number);
+            numberIterations++;
+        }
+        System.out.println(numberIterations);
     }
 
 }
