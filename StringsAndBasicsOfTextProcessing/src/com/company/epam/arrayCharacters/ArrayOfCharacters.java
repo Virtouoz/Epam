@@ -36,16 +36,30 @@ public class ArrayOfCharacters {
             }
         }
         System.out.println(result);
-
-        System.out.println(((int) 'A') + 25);
-        System.out.println((int) 'a');
-        System.out.println((int) 'Z');
-        System.out.println((int) 'z');
     }
 
     // В строке найти количество чисел.
     public static void task4() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        int result = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+                result++;
+                while (str.charAt(i) >= '0' && str.charAt(i) <= '9' && i < str.length() - 1) {
+                    i++;
+                }
+            }
+            if (i == str.length() - 2) {
+                char char1 = str.charAt(str.length() - 2);
+                char char2 = str.charAt(str.length() - 1);
+                if ((char1 < '0' || char1 > '9') && (char2 >= '0' && char2 <= '9')) {
+                    result++;
+                    break;
+                }
+            }
+        }
+        System.out.println(result);
     }
 
     // Удалить в строке все лишние пробелы, то есть серии подряд идущих пробелов заменить на одиночные пробелы.
