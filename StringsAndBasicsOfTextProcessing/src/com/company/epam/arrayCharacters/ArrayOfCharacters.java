@@ -20,7 +20,15 @@ public class ArrayOfCharacters {
 
     // В строке найти количество цифр.
     public static void task3() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        int result = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+                result++;
+            }
+        }
+        System.out.println(result);
     }
 
     // В строке найти количество чисел.
