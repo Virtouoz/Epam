@@ -70,11 +70,36 @@ public class WorkingWithStringAsObject {
         System.out.println(stringBuilder);
     }
 
+    public static String regExFunc(String str) {
+        return str.replaceAll("(?<nums>.+)\\k<nums>+", "${nums}");
+    }
+
+    public static String useStringBuilderFunction(String str) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(str);
+        int i = 0;
+        while (i < stringBuilder.length()) {
+            int j = 1 + i;
+            while (j < stringBuilder.length()) {
+                if (stringBuilder.charAt(i) == stringBuilder.charAt(j)) {
+                    stringBuilder.deleteCharAt(j);
+                } else {
+                    j = j + 1;
+                }
+            }
+            i = i + 1;
+        }
+        return stringBuilder.toString();
+    }
+
     // Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы. Например, если было введено "abc cde
     //def", то должно быть выведено "abcdef".
     public static void task7() {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
+        str = str.replace(" ", "");
+        str = useStringBuilderFunction(str);
+        System.out.println(str);
     }
 
     // Вводится строка слов, разделенных пробелами. Найти самое длинное слово и вывести его на экран. Случай, когда самых
