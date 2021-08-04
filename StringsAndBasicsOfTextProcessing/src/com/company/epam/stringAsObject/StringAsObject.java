@@ -1,8 +1,8 @@
-package com.company.epam.workingWithStringAsObject;
+package com.company.epam.stringAsObject;
 
 import java.util.Scanner;
 
-public class WorkingWithStringAsObject {
+public class StringAsObject {
 
     // Дан текст (строка). Найдите наибольшее количество подряд идущих пробелов в нем.
     public static void task1() {
