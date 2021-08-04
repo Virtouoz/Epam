@@ -147,7 +147,15 @@ public class WorkingWithStringAsObject {
     // вопросительным знаком. Определить количество предложений в строке X.
     public static void task10() {
         Scanner scanner = new Scanner(System.in);
-        String str = scanner.nextLine();
+        String X = scanner.nextLine();
+        int result = 0;
+        String[] buffer = X.split("\\.");
+        result += buffer.length > 1 ? buffer.length - 1 : 0;
+        buffer = X.split("!");
+        result += buffer.length > 1 ? buffer.length - 1 : 0;
+        buffer = X.split("\\?");
+        result += buffer.length > 1 ? buffer.length - 1 : 0;
+        System.out.println(result + 1);
     }
 
 }
