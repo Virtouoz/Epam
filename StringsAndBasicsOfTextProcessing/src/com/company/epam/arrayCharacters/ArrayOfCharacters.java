@@ -6,7 +6,14 @@ public class ArrayOfCharacters {
 
     // Дан массив названий переменных в camelCase. Преобразовать названия в snake_case.
     public static void task1() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') {
+                str = str.replace("" + str.charAt(i), "_" + (char) (str.charAt(i) + 32));
+            }
+        }
+        System.out.println(str);
     }
 
     // Замените в строке все вхождения 'word' на 'letter'.
@@ -29,6 +36,11 @@ public class ArrayOfCharacters {
             }
         }
         System.out.println(result);
+
+        System.out.println(((int) 'A') + 25);
+        System.out.println((int) 'a');
+        System.out.println((int) 'Z');
+        System.out.println((int) 'z');
     }
 
     // В строке найти количество чисел.
