@@ -122,6 +122,25 @@ public class WorkingWithStringAsObject {
     public static void task9() {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
+        int x = 0;
+        int j;
+        for (int i = 97; i <= 122; i++) {
+            j = 0;
+            char c = (char) i;
+            while (j < str.length()) {
+                if (str.indexOf(Character.toString(c), j) != -1) {
+                    x++;
+                    j = str.indexOf(Character.toString(c), j) + 1;
+                    if (j == str.length()) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+        System.out.println("Количество строчных букв = " + x);
+        System.out.println("Количество прописных букв = " + (str.replace(" ", "").length() - x));
     }
 
     // Строка X состоит из нескольких предложений, каждое из которых кончается точкой, восклицательным или
