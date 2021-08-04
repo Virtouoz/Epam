@@ -63,6 +63,11 @@ public class WorkingWithStringAsObject {
     public static void task6() {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
+        StringBuilder stringBuilder = new StringBuilder(str.length() * 2);
+        for (int i = 0; i < str.length(); i++) {
+            stringBuilder.append(str.charAt(i)).append(str.charAt(i));
+        }
+        System.out.println(stringBuilder);
     }
 
     // Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы. Например, если было введено "abc cde
