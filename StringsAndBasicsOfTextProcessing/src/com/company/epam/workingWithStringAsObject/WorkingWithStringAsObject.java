@@ -50,7 +50,13 @@ public class WorkingWithStringAsObject {
     public static void task5() {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
-
+        int result = 0;
+        for (char elem : str.toCharArray()) {
+            if (elem == 'a') {
+                result++;
+            }
+        }
+        System.out.println(result);
     }
 
     // Из заданной строки получить новую, повторив каждый символ дважды.
