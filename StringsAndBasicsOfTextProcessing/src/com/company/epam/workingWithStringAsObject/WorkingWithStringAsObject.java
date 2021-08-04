@@ -40,17 +40,17 @@ public class WorkingWithStringAsObject {
     // С помощью функции копирования и операции конкатенации составить из частей слова “информатика” слово “торт”.
     public static void task4() {
         String str = "информатика";
-        String newStrT;
-        String newStrOR;
-        newStrT = String.copyValueOf(str.toCharArray(), 7, 1);
-        newStrOR = String.copyValueOf(str.toCharArray(), 3, 2);
-        System.out.println(newStrT.concat(newStrOR).concat(newStrT));
+        String stringBuilder = String.copyValueOf(str.toCharArray(), 7, 1) +
+                String.copyValueOf(str.toCharArray(), 3, 2) +
+                String.copyValueOf(str.toCharArray(), 7, 1);
+        System.out.println(stringBuilder);
     }
 
     // Подсчитать, сколько раз среди символов заданной строки встречается буква “а”.
     public static void task5() {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
+
     }
 
     // Из заданной строки получить новую, повторив каждый символ дважды.
