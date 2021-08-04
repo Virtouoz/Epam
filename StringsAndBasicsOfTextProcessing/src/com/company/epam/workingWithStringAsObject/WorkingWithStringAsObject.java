@@ -92,8 +92,8 @@ public class WorkingWithStringAsObject {
         return stringBuilder.toString();
     }
 
-    // Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы. Например, если было введено "abc cde
-    //def", то должно быть выведено "abcdef".
+    // Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы. Например, если было введено
+    // "abc cde def", то должно быть выведено "abcdef".
     public static void task7() {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
@@ -102,22 +102,30 @@ public class WorkingWithStringAsObject {
         System.out.println(str);
     }
 
-    // Вводится строка слов, разделенных пробелами. Найти самое длинное слово и вывести его на экран. Случай, когда самых
-    //длинных слов может быть несколько, не обрабатывать.
+    // Вводится строка слов, разделенных пробелами. Найти самое длинное слово и вывести его на экран. Случай,
+    // когда самых длинных слов может быть несколько, не обрабатывать.
     public static void task8() {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
+        String result = "";
+        String[] words = str.split(" ");
+        for (String elem : words) {
+            if (elem.length() > result.length()) {
+                result = elem;
+            }
+        }
+        System.out.println(result);
     }
 
-    // Посчитать количество строчных (маленьких) и прописных (больших) букв в введенной строке. Учитывать только английские
-    //буквы.
+    // Посчитать количество строчных (маленьких) и прописных (больших) букв в введенной строке. Учитывать
+    // только английские буквы.
     public static void task9() {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
     }
 
-    // Строка X состоит из нескольких предложений, каждое из которых кончается точкой, восклицательным или вопросительным
-    //знаком. Определить количество предложений в строке X.
+    // Строка X состоит из нескольких предложений, каждое из которых кончается точкой, восклицательным или
+    // вопросительным знаком. Определить количество предложений в строке X.
     public static void task10() {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
