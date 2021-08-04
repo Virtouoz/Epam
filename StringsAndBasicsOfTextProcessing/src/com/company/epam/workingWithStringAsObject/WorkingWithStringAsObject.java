@@ -24,51 +24,62 @@ public class WorkingWithStringAsObject {
 
     // В строке вставить после каждого символа 'a' символ 'b'.
     public static void task2() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        str = str.replace("a", "ab");
+        System.out.println(str);
     }
 
     // Проверить, является ли заданное слово палиндромом.
     public static void task3() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
     }
 
     // С помощью функции копирования и операции конкатенации составить из частей слова “информатика” слово “торт”.
     public static void task4() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
     }
 
     // Подсчитать, сколько раз среди символов заданной строки встречается буква “а”.
     public static void task5() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
     }
 
     // Из заданной строки получить новую, повторив каждый символ дважды.
     public static void task6() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
     }
 
     // Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы. Например, если было введено "abc cde
     //def", то должно быть выведено "abcdef".
     public static void task7() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
     }
 
     // Вводится строка слов, разделенных пробелами. Найти самое длинное слово и вывести его на экран. Случай, когда самых
     //длинных слов может быть несколько, не обрабатывать.
     public static void task8() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
     }
 
     // Посчитать количество строчных (маленьких) и прописных (больших) букв в введенной строке. Учитывать только английские
     //буквы.
     public static void task9() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
     }
 
     // Строка X состоит из нескольких предложений, каждое из которых кончается точкой, восклицательным или вопросительным
     //знаком. Определить количество предложений в строке X.
     public static void task10() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
     }
 
 }
