@@ -65,7 +65,12 @@ public class ArrayOfCharacters {
     // Удалить в строке все лишние пробелы, то есть серии подряд идущих пробелов заменить на одиночные пробелы.
     // Крайние пробелы в строке удалить.
     public static void task5() {
-
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        // trim() - возвращает копию строки с пропущенными начальными и конечными пробелами,
+        //   другими словами метод позволяет в Java удалить пробелы в начале и конце строки.
+        str = str.trim().replaceAll("(\\s)+", "$1");
+        System.out.println(str);
     }
 
 }
